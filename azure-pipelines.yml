@@ -71,7 +71,7 @@ stages:
             inputs:
               action: deploy
               manifests: |
-                $(Pipeline.Workspace)/azure-vote-all-in-one-redis_acr.yaml
+                $(Pipeline.Workspace)/manifests/azure-vote-all-in-one-redis_acr.yaml
 #               $(Pipeline.Workspace)/manifests/service.yml
               imagePullSecrets: |
                 $(imagePullSecret)
