@@ -11,7 +11,7 @@ resources:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '836f1112-a307-42e4-bdc5-1b2a0b60f7e6'
+  dockerRegistryServiceConnection: '---'
   imageRepository: 'azure-vote-front'
   containerRegistry: 'hatacr.azurecr.io'
   dockerfilePath: '**/azure-vote/Dockerfile'
