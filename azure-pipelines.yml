@@ -15,7 +15,7 @@ variables:
   imageRepository: 'azure-vote-front'
   containerRegistry: 'hatacr.azurecr.io'
   dockerfilePath: '**/azure-vote/Dockerfile'
-  mainfest: '**/azure-vote-all-in-one-redis.yaml'
+  # mainfest: '**/azure-vote-all-in-one-redis.yaml'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'hatacre33a-auth'
 
@@ -43,7 +43,7 @@ stages:
           $(tag)
           
     - upload: manifests
-      artifact: $(manifests)
+      artifact: manifests
 
 - stage: Deploy
   displayName: Deploy stage
@@ -71,8 +71,8 @@ stages:
             inputs:
               action: deploy
               manifests: |
-                $(Pipeline.Workspace)/azure-vote-all-in-one-redis.yaml
-                # $(Pipeline.Workspace)/manifests/service.yml
+                $(Pipeline.Workspace)/azure-vote-all-in-one-redis_acr.yaml
+#               $(Pipeline.Workspace)/manifests/service.yml
               imagePullSecrets: |
                 $(imagePullSecret)
               containers: |
