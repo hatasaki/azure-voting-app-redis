@@ -17,7 +17,7 @@ variables:
   dockerfilePath: '**/azure-vote/Dockerfile'
   # mainfest: '**/azure-vote-all-in-one-redis.yaml'
   tag: '$(Build.BuildId)'
-  imagePullSecret: 'hatacre33a-auth'
+  imagePullSecret: 'test-secret'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
